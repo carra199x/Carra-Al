@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101827"><meta name="description" content="carra AL — Personal AI workspace">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+  <title>carra AL</title>
+</head>
+<body>
+  <header class="top"><div class="brand"><span class="logo">cA</span><div><b>carra AL</b><small>Personal AI</small></div></div>
+    <button id="themeBtn" class="icon" aria-label="Đổi giao diện">☼</button>
+  </header>
+  <main>
+    <section class="welcome"><p class="eyebrow">YOUR PRIVATE AI WORKSPACE</p><h1>Xin chào! 👋</h1><p>Đây là nền tảng ban đầu của carra AL. Bộ nhớ và ghi chú được lưu trên thiết bị này.</p></section>
+    <nav class="tabs" aria-label="Khu vực ứng dụng">
+      <button class="tab active" data-view="chat">💬 Chat</button><button class="tab" data-view="memory">🧠 Memory</button><button class="tab" data-view="media">🎬 Media</button><button class="tab" data-view="settings">⚙️ Settings</button>
+    </nav>
+    <section id="chat" class="view active">
+      <div class="panel"><div class="panelhead"><div><b>Trò chuyện</b><small id="modeLabel">Chế độ nền tảng — chưa kết nối mô hình AI</small></div><button id="clearChat" class="textbtn">Xóa chat</button></div>
+        <div id="messages" class="messages"><div class="bubble assistant">Chào bạn! Tôi là carra AL. Hiện tại ứng dụng mới có giao diện và bộ nhớ cục bộ; chưa kết nối mô hình AI nên tôi chưa thể trả lời thông minh như GPT. Chúng ta sẽ kết nối AI ở bước tiếp theo.</div></div>
+        <form id="chatForm" class="composer"><textarea id="prompt" rows="2" placeholder="Nhập tin nhắn… (Tiếng Việt / Deutsch / English)"></textarea><button class="send" type="submit">Gửi ↑</button></form>
+        <p class="hint">Tin nhắn hiện được lưu trên trình duyệt; chưa gửi đến máy chủ AI.</p>
+      </div>
+    </section>
+    <section id="memory" class="view">
+      <div class="panel"><div class="panelhead"><div><b>Bộ nhớ cá nhân</b><small>Lưu cục bộ trên iPhone này</small></div></div>
+        <form id="memoryForm" class="stack"><label for="memoryText">Thông tin muốn carra AL ghi nhớ</label><textarea id="memoryText" rows="3" placeholder="Ví dụ: Tôi muốn học tiếng Đức mỗi ngày…"></textarea><button class="primary">Lưu vào bộ nhớ</button></form>
+        <div id="memoryList" class="list"></div><p class="hint">Bộ nhớ chưa đồng bộ đám mây. Không lưu mật khẩu, API key hoặc dữ liệu nhạy cảm.</p>
+      </div>
+    </section>
+    <section id="media" class="view">
+      <div class="panel"><b>Media AI</b><p>Đây là khu vực chuẩn bị cho hình ảnh, âm thanh và video.</p>
+        <label class="upload">Chọn ảnh hoặc video từ iPhone<input id="mediaFile" type="file" accept="image/*,video/*"></label>
+        <div id="mediaInfo" class="hint">Chưa chọn tệp. Bản hiện tại chỉ cho chọn tệp cục bộ, chưa phân tích hoặc tạo video bằng AI.</div>
+      </div>
+      <div class="panel"><b>Chức năng dự kiến</b><ul><li>Phân tích ảnh và video</li><li>Chuyển giọng nói thành văn bản và dịch thuật</li><li>Tạo video qua nhà cung cấp có hạn mức miễn phí nếu có</li></ul></div>
+    </section>
+    <section id="settings" class="view">
+      <div class="panel"><b>Cài đặt</b>
+        <label class="field">Ngôn ngữ giao diện<select id="language"><option value="vi">Tiếng Việt</option><option value="de">Deutsch</option><option value="en">English</option></select></label>
+        <div class="notice"><b>Quyền riêng tư</b><p>Dữ liệu phiên bản này lưu trong bộ nhớ trình duyệt trên thiết bị. Xóa dữ liệu website hoặc đổi trình duyệt có thể làm mất dữ liệu. Chưa có sao lưu đám mây.</p></div>
+        <button id="exportBtn" class="primary">Xuất dữ liệu bộ nhớ (.json)</button>
+        <button id="deleteBtn" class="danger">Xóa toàn bộ dữ liệu trên thiết bị</button>
+        <p class="hint">Chưa nhập API key vào ứng dụng. Không bao giờ đặt API key bí mật trong mã frontend công khai.</p>
+      </div>
+    </section>
+  </main>
+  <footer>carra AL · Personal AI · v0.1 foundation</footer>
+  <script src="app.js"></script>
+</body></html>
